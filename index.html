@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Калькулятор стоимости покупки</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<main class="card">
+<h1>Считаем покупаем</h1>
+<p>Выберете и всё будет работать</p>
+<form id="calculator" novalidate>
+<div class="field"><label for="quantity">Количество</label><input id="quantity" name="quantity" type="number" min="1" max="1000000" step="1" value="1" required aria-describedby="quantityError"><div id="quantityError" class="error" hidden>Введите целое количество от 1 до 1 000 000.</div></div>
+<div class="field"><label for="product">Тип товара</label><select id="product" name="product"><option value="basic">Блокнот — 200 ₽</option><option value="options">Набор карандашей — от 300 ₽</option><option value="property">Ежедневник — 500 ₽</option></select></div>
+<div id="optionsGroup" class="field" hidden><label for="packaging">Упаковка</label><select id="packaging" name="packaging" disabled><option value="0">Стандартная — без доплаты</option><option value="100">Подарочная — +100 ₽ за штуку</option><option value="200">Премиальная — +200 ₽ за штуку</option></select></div>
+<div id="propertyGroup" class="field" hidden><label class="check" for="engraving"><input id="engraving" name="engraving" type="checkbox" disabled>Персональная надпись — +150 ₽ за штуку</label></div>
+</form>
+<section class="result" aria-live="polite" aria-atomic="true"><p>Итоговая стоимость</p><div class="price" id="total">200 ₽</div><p class="detail" id="details">1 шт. × 200 ₽</p></section>
+<p class="note">Доп инфа какаета.</p>
+</main>
+</body>
+</html>
